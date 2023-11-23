@@ -18,6 +18,9 @@ contract NFT is ERC1155 {
         _mint(to, tokenCounter, amount, "");
         tokenCounter++;
     }
+    function burn(address to, uint256 tokenId, uint256 amount) public {
+        _burn(to, tokenId, amount);
+    }
 
     function batchMint(address to, uint256[] memory amounts) public  {
         uint256[] memory ids = new uint256[](amounts.length);
